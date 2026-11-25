@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* Infinite Skills Marquee */
+
+.skills-track {
+    display: flex;
+    width: max-content;
+    animation: skills-marquee 25s linear infinite;
+}
+
+@keyframes skills-marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.skills-track:hover {
+    animation-play-state: paused;
+}
+
